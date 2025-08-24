@@ -1,5 +1,6 @@
 import type React from "react"
 import { SparklesIcon } from "./icons/SparklesIcon"
+import { ThemeToggle } from "./ThemeToggle"
 
 export const Header = (): React.ReactNode => {
   return (
@@ -8,6 +9,7 @@ export const Header = (): React.ReactNode => {
         <SparklesIcon className="w-8 h-8 text-primary-500" />
         <h1 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">AI Prompt Enhancer</h1>
       </div>
+      <ThemeToggle />
     </header>
   )
 }

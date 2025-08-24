@@ -80,14 +80,22 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, upl
       onDragLeave={onDragLeave}
       onDragOver={onDragOver}
       onDrop={onDrop}
-      className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-colors duration-300 ${isDragging ? "border-primary-500 bg-primary-50 dark:bg-primary-900/20" : "border-gray-300 dark:border-gray-600"}`}
+      className={`group relative border-2 border-dashed rounded-lg p-8 text-center transition-all duration-300 hover:shadow-lg ${isDragging ? "border-primary-500 bg-primary-50 dark:bg-primary-900/20" : "border-gray-300 dark:border-gray-600 hover:border-primary-400 dark:hover:border-primary-500"}`}
     >
       <input type="file" id="file-upload" className="sr-only" onChange={onFileChange} accept="image/*" />
-      <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center justify-center gap-2">
-        <UploadCloudIcon className="w-12 h-12 text-gray-400" />
-        <p className="font-semibold text-gray-700 dark:text-gray-300">Drag & drop an image here</p>
-        <p className="text-sm text-gray-500">
-          or <span className="text-primary-500 font-medium">click to browse</span>
+      <label
+        htmlFor="file-upload"
+        className="cursor-pointer flex flex-col items-center justify-center gap-2 hover:scale-105 transition-transform duration-200"
+      >
+        <UploadCloudIcon className="w-12 h-12 text-gray-400 group-hover:text-primary-500 transition-colors duration-200" />
+        <p className="font-semibold text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
+          Drag & drop an image here
+        </p>
+        <p className="text-sm text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors duration-200">
+          or{" "}
+          <span className="text-primary-500 font-medium hover:text-primary-600 transition-colors duration-200">
+            click to browse
+          </span>
         </p>
       </label>
     </div>
